@@ -32,9 +32,9 @@
                       <Component id="jLabel2" min="-2" pref="105" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton2" max="32767" attributes="0"/>
-                          <Component id="jTextField1" max="32767" attributes="0"/>
-                          <Component id="jButton1" pref="125" max="32767" attributes="0"/>
+                          <Component id="btnCancel" max="32767" attributes="0"/>
+                          <Component id="txfMovieID" max="32767" attributes="0"/>
+                          <Component id="btnDelete" pref="125" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
@@ -53,12 +53,12 @@
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfMovieID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="74" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -77,9 +77,9 @@
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txfMovieID">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="33" red="ff" type="rgb"/>
@@ -87,7 +87,7 @@
         <Property name="text" type="java.lang.String" value="Delete Movie "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnCancel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>

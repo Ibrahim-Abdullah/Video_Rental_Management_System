@@ -54,9 +54,9 @@
                           <Component id="txfMovieId" max="32767" attributes="0"/>
                           <Component id="txfMovieTitle" max="32767" attributes="0"/>
                           <Component id="txfYearReleased" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Genre" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txfGenre" alignment="0" max="32767" attributes="0"/>
                           <Component id="Rating" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Director" alignment="0" pref="171" max="32767" attributes="0"/>
+                          <Component id="txfDirector" alignment="0" pref="171" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="btnCancel" min="-2" pref="95" max="-2" attributes="0"/>
@@ -97,7 +97,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="Genre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfGenre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -107,7 +107,7 @@
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="Director" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txfDirector" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -167,11 +167,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfYearReleasedActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Genre">
+    <Component class="javax.swing.JTextField" name="txfGenre">
     </Component>
     <Component class="javax.swing.JTextField" name="Rating">
     </Component>
-    <Component class="javax.swing.JTextField" name="Director">
+    <Component class="javax.swing.JTextField" name="txfDirector">
     </Component>
     <Component class="javax.swing.JButton" name="btnAddMovie">
       <Properties>

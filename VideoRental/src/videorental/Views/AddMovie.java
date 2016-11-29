@@ -37,9 +37,9 @@ public class AddMovie extends javax.swing.JFrame {
         txfMovieId = new javax.swing.JTextField();
         txfMovieTitle = new javax.swing.JTextField();
         txfYearReleased = new javax.swing.JTextField();
-        Genre = new javax.swing.JTextField();
+        txfGenre = new javax.swing.JTextField();
         Rating = new javax.swing.JTextField();
-        Director = new javax.swing.JTextField();
+        txfDirector = new javax.swing.JTextField();
         btnAddMovie = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -106,9 +106,9 @@ public class AddMovie extends javax.swing.JFrame {
                             .addComponent(txfMovieId)
                             .addComponent(txfMovieTitle)
                             .addComponent(txfYearReleased)
-                            .addComponent(Genre)
+                            .addComponent(txfGenre)
                             .addComponent(Rating)
-                            .addComponent(Director, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                            .addComponent(txfDirector, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -139,7 +139,7 @@ public class AddMovie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Rating, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,7 +147,7 @@ public class AddMovie extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Director, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfDirector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddMovie)
@@ -202,8 +202,6 @@ public class AddMovie extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Director;
-    private javax.swing.JTextField Genre;
     private javax.swing.JTextField Rating;
     private javax.swing.JButton btnAddMovie;
     private javax.swing.JButton btnCancel;
@@ -215,6 +213,8 @@ public class AddMovie extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField txfDirector;
+    private javax.swing.JTextField txfGenre;
     private javax.swing.JTextField txfMovieId;
     private javax.swing.JTextField txfMovieTitle;
     private javax.swing.JTextField txfYearReleased;
