@@ -28,9 +28,8 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         btnAddMovie = new javax.swing.JButton();
-        btnEditMovie = new javax.swing.JButton();
+        btnViewMovie = new javax.swing.JButton();
         btnSearchMovie = new javax.swing.JButton();
-        btnDeleteMovie = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -47,21 +46,14 @@ public class Menu extends javax.swing.JFrame {
 
         btnAddMovie.setText("Add Movie ");
 
-        btnEditMovie.setText("Edit Movie");
-        btnEditMovie.addActionListener(new java.awt.event.ActionListener() {
+        btnViewMovie.setText("View Movie ");
+        btnViewMovie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditMovieActionPerformed(evt);
+                btnViewMovieActionPerformed(evt);
             }
         });
 
         btnSearchMovie.setText("Search Movie");
-
-        btnDeleteMovie.setText("Delete Movie");
-        btnDeleteMovie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteMovieActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("MOVIE COLLECTION ");
 
@@ -74,7 +66,7 @@ public class Menu extends javax.swing.JFrame {
 
         MovieMenu.setText("Movie");
 
-        jMenuItemAddMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK));
+        jMenuItemAddMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemAddMovie.setMnemonic('A');
         jMenuItemAddMovie.setText("Add Movie");
         MovieMenu.add(jMenuItemAddMovie);
@@ -111,50 +103,40 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(18, 18, 18)
                         .addComponent(btnAddMovie)
                         .addGap(30, 30, 30)
+                        .addComponent(btnViewMovie)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearchMovie))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnEditMovie)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSearchMovie)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnDeleteMovie))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddMovie)
-                    .addComponent(btnEditMovie)
-                    .addComponent(btnSearchMovie)
-                    .addComponent(btnDeleteMovie))
-                .addGap(38, 38, 38)
+                    .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addComponent(btnExit)
-                .addGap(22, 22, 22))
+                .addGap(51, 51, 51))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDeleteMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMovieActionPerformed
+    private void btnViewMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMovieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteMovieActionPerformed
-
-    private void btnEditMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditMovieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditMovieActionPerformed
+    }//GEN-LAST:event_btnViewMovieActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
@@ -202,10 +184,9 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MovieMenu;
     private javax.swing.JButton btnAddMovie;
-    private javax.swing.JButton btnDeleteMovie;
-    private javax.swing.JButton btnEditMovie;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSearchMovie;
+    private javax.swing.JButton btnViewMovie;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -214,4 +195,158 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemDeleteMovie;
     private javax.swing.JMenuItem jMenuItemEditMovie;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the MovieMenu
+     */
+    public javax.swing.JMenu getMovieMenu() {
+        return MovieMenu;
+    }
+
+    /**
+     * @param MovieMenu the MovieMenu to set
+     */
+    public void setMovieMenu(javax.swing.JMenu MovieMenu) {
+        this.MovieMenu = MovieMenu;
+    }
+
+    /**
+     * @return the btnAddMovie
+     */
+    public javax.swing.JButton getBtnAddMovie() {
+        return btnAddMovie;
+    }
+
+    /**
+     * @param btnAddMovie the btnAddMovie to set
+     */
+    public void setBtnAddMovie(javax.swing.JButton btnAddMovie) {
+        this.btnAddMovie = btnAddMovie;
+    }
+
+    /**
+     * @return the btnExit
+     */
+    public javax.swing.JButton getBtnExit() {
+        return btnExit;
+    }
+
+    /**
+     * @param btnExit the btnExit to set
+     */
+    public void setBtnExit(javax.swing.JButton btnExit) {
+        this.btnExit = btnExit;
+    }
+
+    /**
+     * @return the btnSearchMovie
+     */
+    public javax.swing.JButton getBtnSearchMovie() {
+        return btnSearchMovie;
+    }
+
+    /**
+     * @param btnSearchMovie the btnSearchMovie to set
+     */
+    public void setBtnSearchMovie(javax.swing.JButton btnSearchMovie) {
+        this.btnSearchMovie = btnSearchMovie;
+    }
+
+    /**
+     * @return the btnViewMovie
+     */
+    public javax.swing.JButton getBtnViewMovie() {
+        return btnViewMovie;
+    }
+
+    /**
+     * @param btnViewMovie the btnViewMovie to set
+     */
+    public void setBtnViewMovie(javax.swing.JButton btnViewMovie) {
+        this.btnViewMovie = btnViewMovie;
+    }
+
+    /**
+     * @return the jMenu2
+     */
+    public javax.swing.JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    /**
+     * @param jMenu2 the jMenu2 to set
+     */
+    public void setjMenu2(javax.swing.JMenu jMenu2) {
+        this.jMenu2 = jMenu2;
+    }
+
+    /**
+     * @return the jMenu3
+     */
+    public javax.swing.JMenu getjMenu3() {
+        return jMenu3;
+    }
+
+    /**
+     * @param jMenu3 the jMenu3 to set
+     */
+    public void setjMenu3(javax.swing.JMenu jMenu3) {
+        this.jMenu3 = jMenu3;
+    }
+
+    /**
+     * @return the jMenuBar1
+     */
+    public javax.swing.JMenuBar getjMenuBar1() {
+        return jMenuBar1;
+    }
+
+    /**
+     * @param jMenuBar1 the jMenuBar1 to set
+     */
+    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+        this.jMenuBar1 = jMenuBar1;
+    }
+
+    /**
+     * @return the jMenuItemAddMovie
+     */
+    public javax.swing.JMenuItem getjMenuItemAddMovie() {
+        return jMenuItemAddMovie;
+    }
+
+    /**
+     * @param jMenuItemAddMovie the jMenuItemAddMovie to set
+     */
+    public void setjMenuItemAddMovie(javax.swing.JMenuItem jMenuItemAddMovie) {
+        this.jMenuItemAddMovie = jMenuItemAddMovie;
+    }
+
+    /**
+     * @return the jMenuItemDeleteMovie
+     */
+    public javax.swing.JMenuItem getjMenuItemDeleteMovie() {
+        return jMenuItemDeleteMovie;
+    }
+
+    /**
+     * @param jMenuItemDeleteMovie the jMenuItemDeleteMovie to set
+     */
+    public void setjMenuItemDeleteMovie(javax.swing.JMenuItem jMenuItemDeleteMovie) {
+        this.jMenuItemDeleteMovie = jMenuItemDeleteMovie;
+    }
+
+    /**
+     * @return the jMenuItemEditMovie
+     */
+    public javax.swing.JMenuItem getjMenuItemEditMovie() {
+        return jMenuItemEditMovie;
+    }
+
+    /**
+     * @param jMenuItemEditMovie the jMenuItemEditMovie to set
+     */
+    public void setjMenuItemEditMovie(javax.swing.JMenuItem jMenuItemEditMovie) {
+        this.jMenuItemEditMovie = jMenuItemEditMovie;
+    }
 }
