@@ -14,14 +14,14 @@ public class AddMovie extends javax.swing.JFrame {
     /**
      * @return the jComboBox1
      */
-    public javax.swing.JComboBox<String> getjComboBox1() {
+    public javax.swing.JComboBox<String> getGenreComboBox() {
         return jcmbGenre;
     }
 
     /**
      * @param jComboBox1 the jComboBox1 to set
      */
-    public void setjComboBox1(javax.swing.JComboBox<String> jComboBox1) {
+    public void setgetGenreComboBox(javax.swing.JComboBox<String> jComboBox1) {
         this.jcmbGenre = jComboBox1;
     }
 

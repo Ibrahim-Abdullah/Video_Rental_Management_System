@@ -9,13 +9,23 @@ package videorental.Controller;
  *
  * @author Ibrahim-Abdullah
  */
-public class Book {
-    public int ID;
-    public String title;
-    public int  year;
-    public String genre;
-    public double rating;
-    public String director;
+public class Movie {
+    private int ID;
+    private String title;
+    private int  yearReleased;
+    private String genre;
+    private double rating;
+    private String director;
+
+    Movie(int movieID, String movieTitle, int yearReleased, String movieGenre,
+            double movieRating, String movieDirector) {
+        this.ID = movieID;
+        this.title = movieTitle;
+        this.yearReleased = yearReleased;
+        this.genre = movieGenre;
+        this.rating = movieRating;
+        this.director = movieDirector;
+    }
 
     /**
      * @return the ID
@@ -48,8 +58,12 @@ public class Book {
     /**
      * @param year the year to set
      */
-    public void setYear(int year) {
-        this.year = year;
+    public void setYearReleased(int year) {
+        this.yearReleased = year;
+    }
+    
+    public int getYearReleased(){
+        return this.yearReleased;
     }
 
     /**
