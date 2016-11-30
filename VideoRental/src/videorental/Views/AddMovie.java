@@ -12,6 +12,104 @@ package videorental.Views;
 public class AddMovie extends javax.swing.JFrame {
 
     /**
+     * @return the jComboBox1
+     */
+    public javax.swing.JComboBox<String> getjComboBox1() {
+        return jcmbGenre;
+    }
+
+    /**
+     * @param jComboBox1 the jComboBox1 to set
+     */
+    public void setjComboBox1(javax.swing.JComboBox<String> jComboBox1) {
+        this.jcmbGenre = jComboBox1;
+    }
+
+    /**
+     * @return the Rating
+     */
+    public javax.swing.JTextField getRating() {
+        return Rating;
+    }
+
+    /**
+     * @param Rating the Rating to set
+     */
+    public void setRating(javax.swing.JTextField Rating) {
+        this.Rating = Rating;
+    }
+
+    /**
+     * @return the btnAddMovie
+     */
+    public javax.swing.JButton getBtnAddMovie() {
+        return btnAddMovie;
+    }
+
+    /**
+     * @return the btnCancel
+     */
+    public javax.swing.JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    /**
+     * @return the txfDirector
+     */
+    public javax.swing.JTextField getTxfDirector() {
+        return txfDirector;
+    }
+
+    /**
+     * @param txfDirector the txfDirector to set
+     */
+    public void setTxfDirector(javax.swing.JTextField txfDirector) {
+        this.txfDirector = txfDirector;
+    }
+
+    /**
+     * @return the txfMovieId
+     */
+    public javax.swing.JTextField getTxfMovieId() {
+        return txfMovieId;
+    }
+
+    /**
+     * @param txfMovieId the txfMovieId to set
+     */
+    public void setTxfMovieId(javax.swing.JTextField txfMovieId) {
+        this.txfMovieId = txfMovieId;
+    }
+
+    /**
+     * @return the txfMovieTitle
+     */
+    public javax.swing.JTextField getTxfMovieTitle() {
+        return txfMovieTitle;
+    }
+
+    /**
+     * @param txfMovieTitle the txfMovieTitle to set
+     */
+    public void setTxfMovieTitle(javax.swing.JTextField txfMovieTitle) {
+        this.txfMovieTitle = txfMovieTitle;
+    }
+
+    /**
+     * @return the txfYearReleased
+     */
+    public javax.swing.JTextField getTxfYearReleased() {
+        return txfYearReleased;
+    }
+
+    /**
+     * @param txfYearReleased the txfYearReleased to set
+     */
+    public void setTxfYearReleased(javax.swing.JTextField txfYearReleased) {
+        this.txfYearReleased = txfYearReleased;
+    }
+
+    /**
      * Creates new form AddMovie
      */
     public AddMovie() {
@@ -37,12 +135,12 @@ public class AddMovie extends javax.swing.JFrame {
         txfMovieId = new javax.swing.JTextField();
         txfMovieTitle = new javax.swing.JTextField();
         txfYearReleased = new javax.swing.JTextField();
-        txfGenre = new javax.swing.JTextField();
         Rating = new javax.swing.JTextField();
         txfDirector = new javax.swing.JTextField();
         btnAddMovie = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        jcmbGenre = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Add Movie to Collection");
@@ -77,6 +175,8 @@ public class AddMovie extends javax.swing.JFrame {
 
         btnCancel.setText("Cancel");
 
+        jcmbGenre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Action", "Comedy", "Drama", "Crime", "Adventure", "Animation", "Biography", "Thriller ", "Mystry", "Musical", "Documentary", "Romance ", "Fantasy" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,12 +206,12 @@ public class AddMovie extends javax.swing.JFrame {
                             .addComponent(txfMovieId)
                             .addComponent(txfMovieTitle)
                             .addComponent(txfYearReleased)
-                            .addComponent(txfGenre)
                             .addComponent(Rating)
                             .addComponent(txfDirector, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcmbGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -137,10 +237,13 @@ public class AddMovie extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txfYearReleased, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txfGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jcmbGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Rating, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -213,8 +316,8 @@ public class AddMovie extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JComboBox<String> jcmbGenre;
     private javax.swing.JTextField txfDirector;
-    private javax.swing.JTextField txfGenre;
     private javax.swing.JTextField txfMovieId;
     private javax.swing.JTextField txfMovieTitle;
     private javax.swing.JTextField txfYearReleased;

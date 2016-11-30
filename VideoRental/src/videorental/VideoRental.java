@@ -5,6 +5,9 @@
  */
 package videorental;
 
+import videorental.Controller.MenuController;
+import videorental.Views.Menu;
+
 /**
  *
  * @author Ibrahim-Abdullah
@@ -15,7 +18,10 @@ public class VideoRental {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Menu menuFrame = new Menu();
+        MenuController mc = new MenuController(menuFrame);
+        mc.control();
+        menuFrame.setVisible(true);
     }
     
 }

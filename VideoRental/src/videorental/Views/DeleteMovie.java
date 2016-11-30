@@ -12,6 +12,34 @@ package videorental.Views;
 public class DeleteMovie extends javax.swing.JFrame {
 
     /**
+     * @return the btnCancel
+     */
+    public javax.swing.JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    /**
+     * @return the btnDelete
+     */
+    public javax.swing.JButton getBtnDelete() {
+        return btnDelete;
+    }
+
+    /**
+     * @return the txfMovieID
+     */
+    public javax.swing.JTextField getTxfMovieID() {
+        return txfMovieID;
+    }
+
+    /**
+     * @param txfMovieID the txfMovieID to set
+     */
+    public void setTxfMovieID(javax.swing.JTextField txfMovieID) {
+        this.txfMovieID = txfMovieID;
+    }
+
+    /**
      * Creates new form DeleteMovie
      */
     public DeleteMovie() {

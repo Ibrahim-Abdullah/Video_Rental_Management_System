@@ -37,8 +37,8 @@ public class Menu extends javax.swing.JFrame {
         jMenuItemAddMovie = new javax.swing.JMenuItem();
         jMenuItemEditMovie = new javax.swing.JMenuItem();
         jMenuItemDeleteMovie = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        SearchMenu = new javax.swing.JMenu();
+        ViewMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Movie Collection Movie");
@@ -64,6 +64,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        MovieMenu.setMnemonic('M');
         MovieMenu.setText("Movie");
 
         jMenuItemAddMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
@@ -88,11 +89,13 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(MovieMenu);
 
-        jMenu2.setText("Search");
-        jMenuBar1.add(jMenu2);
+        SearchMenu.setMnemonic('S');
+        SearchMenu.setText("Search");
+        jMenuBar1.add(SearchMenu);
 
-        jMenu3.setText("View");
-        jMenuBar1.add(jMenu3);
+        ViewMenu.setMnemonic('V');
+        ViewMenu.setText("View");
+        jMenuBar1.add(ViewMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -114,18 +117,18 @@ public class Menu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchMovie, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(btnExit)
                 .addGap(51, 51, 51))
@@ -183,13 +186,13 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MovieMenu;
+    private javax.swing.JMenu SearchMenu;
+    private javax.swing.JMenu ViewMenu;
     private javax.swing.JButton btnAddMovie;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSearchMovie;
     private javax.swing.JButton btnViewMovie;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAddMovie;
     private javax.swing.JMenuItem jMenuItemDeleteMovie;
@@ -267,48 +270,6 @@ public class Menu extends javax.swing.JFrame {
     }
 
     /**
-     * @return the jMenu2
-     */
-    public javax.swing.JMenu getjMenu2() {
-        return jMenu2;
-    }
-
-    /**
-     * @param jMenu2 the jMenu2 to set
-     */
-    public void setjMenu2(javax.swing.JMenu jMenu2) {
-        this.jMenu2 = jMenu2;
-    }
-
-    /**
-     * @return the jMenu3
-     */
-    public javax.swing.JMenu getjMenu3() {
-        return jMenu3;
-    }
-
-    /**
-     * @param jMenu3 the jMenu3 to set
-     */
-    public void setjMenu3(javax.swing.JMenu jMenu3) {
-        this.jMenu3 = jMenu3;
-    }
-
-    /**
-     * @return the jMenuBar1
-     */
-    public javax.swing.JMenuBar getjMenuBar1() {
-        return jMenuBar1;
-    }
-
-    /**
-     * @param jMenuBar1 the jMenuBar1 to set
-     */
-    public void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
-        this.jMenuBar1 = jMenuBar1;
-    }
-
-    /**
      * @return the jMenuItemAddMovie
      */
     public javax.swing.JMenuItem getjMenuItemAddMovie() {
@@ -348,5 +309,19 @@ public class Menu extends javax.swing.JFrame {
      */
     public void setjMenuItemEditMovie(javax.swing.JMenuItem jMenuItemEditMovie) {
         this.jMenuItemEditMovie = jMenuItemEditMovie;
+    }
+
+    /**
+     * @return the SearchMenu
+     */
+    public javax.swing.JMenu getSearchMenu() {
+        return SearchMenu;
+    }
+
+    /**
+     * @return the ViewMenu
+     */
+    public javax.swing.JMenu getViewMenu() {
+        return ViewMenu;
     }
 }

@@ -54,13 +54,13 @@
                           <Component id="txfMovieId" max="32767" attributes="0"/>
                           <Component id="txfMovieTitle" max="32767" attributes="0"/>
                           <Component id="txfYearReleased" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txfGenre" alignment="0" max="32767" attributes="0"/>
                           <Component id="Rating" alignment="0" max="32767" attributes="0"/>
                           <Component id="txfDirector" alignment="0" pref="171" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="btnCancel" min="-2" pref="95" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jcmbGenre" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -95,11 +95,16 @@
                   <Component id="txfYearReleased" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="txfGenre" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel6" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jcmbGenre" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Rating" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
@@ -167,8 +172,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfYearReleasedActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txfGenre">
-    </Component>
     <Component class="javax.swing.JTextField" name="Rating">
     </Component>
     <Component class="javax.swing.JTextField" name="txfDirector">
@@ -184,6 +187,30 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jcmbGenre">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="13">
+            <StringItem index="0" value="Action"/>
+            <StringItem index="1" value="Comedy"/>
+            <StringItem index="2" value="Drama"/>
+            <StringItem index="3" value="Crime"/>
+            <StringItem index="4" value="Adventure"/>
+            <StringItem index="5" value="Animation"/>
+            <StringItem index="6" value="Biography"/>
+            <StringItem index="7" value="Thriller "/>
+            <StringItem index="8" value="Mystry"/>
+            <StringItem index="9" value="Musical"/>
+            <StringItem index="10" value="Documentary"/>
+            <StringItem index="11" value="Romance "/>
+            <StringItem index="12" value="Fantasy"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
