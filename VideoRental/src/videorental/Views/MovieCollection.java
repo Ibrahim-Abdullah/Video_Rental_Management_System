@@ -12,12 +12,26 @@ import videorental.Models.MovieCollectionModel;
  * @author Ibrahim-Abdullah
  */
 public class MovieCollection extends javax.swing.JFrame {
-        MovieCollectionModel acm;
+
+    /**
+     * @return the MovieCollectionTable
+     */
+    public javax.swing.JTable getMovieCollectionTable() {
+        return MovieCollectionTable;
+    }
+
+    /**
+     * @param MovieCollectionTable the MovieCollectionTable to set
+     */
+    public void setMovieCollectionTable(javax.swing.JTable MovieCollectionTable) {
+        //this.MovieCollectionTable = MovieCollectionTable;
+    }
+        public MovieCollectionModel acm;
     /**
      * Creates new form MovieCollection
      */
     public MovieCollection() {
-        acm = new MovieCollectionModel();
+        //acm = new MovieCollectionModel();
         initComponents();
     }
 
@@ -31,7 +45,7 @@ public class MovieCollection extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        MovieCollectionTable = new javax.swing.JTable();
         btnAddMovie = new javax.swing.JButton();
         btnUpdateMovie = new javax.swing.JButton();
         btnDeleteMovie = new javax.swing.JButton();
@@ -44,13 +58,22 @@ public class MovieCollection extends javax.swing.JFrame {
         jMenuItemUpdateMovie = new javax.swing.JMenuItem();
         jMenuItemDeleteMovie = new javax.swing.JMenuItem();
         jMenuSearch = new javax.swing.JMenu();
+        jMenuItemSearchMovie = new javax.swing.JMenuItem();
         jMenuView = new javax.swing.JMenu();
+        jMenuItemViewCollection = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ALL MOVIES IN COLLECTION");
 
-        jTable1.setModel(acm);
-        jScrollPane1.setViewportView(jTable1);
+        MovieCollectionTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(MovieCollectionTable);
 
         btnAddMovie.setText("Add Movie");
 
@@ -84,10 +107,27 @@ public class MovieCollection extends javax.swing.JFrame {
 
         jMenuSearch.setMnemonic('S');
         jMenuSearch.setText("Search");
+
+        jMenuItemSearchMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemSearchMovie.setMnemonic('c');
+        jMenuItemSearchMovie.setText("Search Movie");
+        jMenuItemSearchMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSearchMovieActionPerformed(evt);
+            }
+        });
+        jMenuSearch.add(jMenuItemSearchMovie);
+
         jMenuBar1.add(jMenuSearch);
 
         jMenuView.setMnemonic('V');
         jMenuView.setText("View");
+
+        jMenuItemViewCollection.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemViewCollection.setMnemonic('w');
+        jMenuItemViewCollection.setText("View Collection");
+        jMenuView.add(jMenuItemViewCollection);
+
         jMenuBar1.add(jMenuView);
 
         setJMenuBar(jMenuBar1);
@@ -144,6 +184,10 @@ public class MovieCollection extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItemSearchMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSearchMovieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemSearchMovieActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -180,6 +224,7 @@ public class MovieCollection extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable MovieCollectionTable;
     private javax.swing.JButton btnAddMovie;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnDeleteMovie;
@@ -188,13 +233,14 @@ public class MovieCollection extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAddMovie;
     private javax.swing.JMenuItem jMenuItemDeleteMovie;
+    private javax.swing.JMenuItem jMenuItemSearchMovie;
     private javax.swing.JMenuItem jMenuItemUpdateMovie;
+    private javax.swing.JMenuItem jMenuItemViewCollection;
     private javax.swing.JMenu jMenuMovie;
     private javax.swing.JMenu jMenuSearch;
     private javax.swing.JMenu jMenuView;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -265,5 +311,26 @@ public class MovieCollection extends javax.swing.JFrame {
      */
     public javax.swing.JMenu getjMenuView() {
         return jMenuView;
+    }
+
+    /**
+     * @return the acm
+     */
+    public MovieCollectionModel getAcm() {
+        return acm;
+    }
+
+    /**
+     * @return the jMenuItemSearchMovie
+     */
+    public javax.swing.JMenuItem getjMenuItemSearchMovie() {
+        return jMenuItemSearchMovie;
+    }
+
+    /**
+     * @return the jMenuItemViewCollection
+     */
+    public javax.swing.JMenuItem getjMenuItemViewCollection() {
+        return jMenuItemViewCollection;
     }
 }

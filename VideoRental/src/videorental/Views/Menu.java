@@ -38,7 +38,9 @@ public class Menu extends javax.swing.JFrame {
         jMenuItemEditMovie = new javax.swing.JMenuItem();
         jMenuItemDeleteMovie = new javax.swing.JMenuItem();
         SearchMenu = new javax.swing.JMenu();
+        jMenuItemSearchMovie = new javax.swing.JMenuItem();
         ViewMenu = new javax.swing.JMenu();
+        jMenuItemViewCollection = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Movie Collection Movie");
@@ -91,10 +93,22 @@ public class Menu extends javax.swing.JFrame {
 
         SearchMenu.setMnemonic('S');
         SearchMenu.setText("Search");
+
+        jMenuItemSearchMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemSearchMovie.setMnemonic('S');
+        jMenuItemSearchMovie.setText("Search Movie");
+        SearchMenu.add(jMenuItemSearchMovie);
+
         jMenuBar1.add(SearchMenu);
 
         ViewMenu.setMnemonic('V');
         ViewMenu.setText("View");
+
+        jMenuItemViewCollection.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemViewCollection.setMnemonic('V');
+        jMenuItemViewCollection.setText("View Collection");
+        ViewMenu.add(jMenuItemViewCollection);
+
         jMenuBar1.add(ViewMenu);
 
         setJMenuBar(jMenuBar1);
@@ -197,6 +211,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemAddMovie;
     private javax.swing.JMenuItem jMenuItemDeleteMovie;
     private javax.swing.JMenuItem jMenuItemEditMovie;
+    private javax.swing.JMenuItem jMenuItemSearchMovie;
+    private javax.swing.JMenuItem jMenuItemViewCollection;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -323,5 +339,19 @@ public class Menu extends javax.swing.JFrame {
      */
     public javax.swing.JMenu getViewMenu() {
         return ViewMenu;
+    }
+
+    /**
+     * @return the jMenuItemViewCollection
+     */
+    public javax.swing.JMenuItem getjMenuItemViewCollection() {
+        return jMenuItemViewCollection;
+    }
+
+    /**
+     * @return the jMenuItemSearchMovie
+     */
+    public javax.swing.JMenuItem getjMenuItemSearchMovie() {
+        return jMenuItemSearchMovie;
     }
 }

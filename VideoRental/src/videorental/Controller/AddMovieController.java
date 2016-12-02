@@ -7,7 +7,10 @@ package videorental.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import videorental.Models.SearchMovieModel;
+import videorental.Models.MovieCollectionModel;
 import videorental.Views.AddMovie;
+import videorental.Views.MovieCollection;
 
 /**
  *
@@ -15,10 +18,11 @@ import videorental.Views.AddMovie;
  */
 public class AddMovieController implements ActionListener{
     AddMovie addMovieFrame;
+    MovieCollectionModel movieCollectionModel;
     
-    public AddMovieController(AddMovie addMovieFrame){
+    public AddMovieController(AddMovie addMovieFrame,MovieCollectionModel movieCollectionModel){
         this.addMovieFrame = addMovieFrame;
-        
+        this.movieCollectionModel = movieCollectionModel;
     }
     /**
      * Add ActionLiesteners to all the form element the addMovieFrame
@@ -38,6 +42,8 @@ public class AddMovieController implements ActionListener{
      */
     public void actionPerformed (ActionEvent e){
          if(e.getSource()== addMovieFrame.getBtnAddMovie() ){
+             
+             //Get form input for processing
              int movieID = Integer.parseInt(addMovieFrame.getTxfMovieId().getText());
              String movieTitle = addMovieFrame.getTxfMovieTitle().getText();
              int  yearReleased = Integer.parseInt(addMovieFrame.getTxfYearReleased().getText());
@@ -45,10 +51,27 @@ public class AddMovieController implements ActionListener{
              Double  movieRating = Double.parseDouble(addMovieFrame.getRating().getText());
              String movieDirector = addMovieFrame.getTxfDirector().getText();
              
+             
+             //Create a new movie object
              Movie newMovie = new Movie(movieID,movieTitle,yearReleased,
                      movieGenre,movieRating,movieDirector);
              
-             //Insert movie into database 
+             //Insert movie object into database 
+            movieCollectionModel.addMovie(newMovie);
+            
+            //Create a new collection View frame to display inserted record
+            MovieCollection mc = new MovieCollection();
+            movieCollectionModel =  MovieCollectionModel.getInstance();
+            SearchMovieModel scm = SearchMovieModel.getInstance();
+            CoollectionViewController cvc = new CoollectionViewController(mc,movieCollectionModel,scm);
+            mc.getMovieCollectionTable().setModel(movieCollectionModel);
+            cvc.controll();
+            
+            //Hide the addmovie form 
+            addMovieFrame.setVisible(false);
+            
+            //Display the movieCollection form
+            mc.setVisible(true);
              //Give feedback to user 
          }
          if(e.getSource()== addMovieFrame.getBtnCancel()){

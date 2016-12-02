@@ -12,6 +12,111 @@ package videorental.Views;
 public class UpdateMovie extends javax.swing.JDialog {
 
     /**
+     * @return the jComboBoxGenre
+     */
+    public javax.swing.JComboBox<String> getjComboBoxGenre() {
+        return jComboBoxGenre;
+    }
+
+    /**
+     * @param jComboBoxGenre the jComboBoxGenre to set
+     */
+    public void setjComboBoxGenre(javax.swing.JComboBox<String> jComboBoxGenre) {
+        this.jComboBoxGenre = jComboBoxGenre;
+    }
+
+    /**
+     * @return the btnCancel
+     */
+    public javax.swing.JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    /**
+     * @return the btnRetrieveRecord
+     */
+    public javax.swing.JButton getBtnRetrieveRecord() {
+        return btnRetrieveRecord;
+    }
+
+    /**
+     * @return the btnUpdateRecord
+     */
+    public javax.swing.JButton getBtnUpdateRecord() {
+        return btnUpdateRecord;
+    }
+
+    /**
+     * @return the txfDirector
+     */
+    public javax.swing.JTextField getTxfDirector() {
+        return txfDirector;
+    }
+
+    /**
+     * @param txfDirector the txfDirector to set
+     */
+    public void setTxfDirector(javax.swing.JTextField txfDirector) {
+        this.txfDirector = txfDirector;
+    }
+
+    /**
+     * @return the txfMovieID
+     */
+    public javax.swing.JTextField getTxfMovieID() {
+        return txfMovieID;
+    }
+
+    /**
+     * @param txfMovieID the txfMovieID to set
+     */
+    public void setTxfMovieID(javax.swing.JTextField txfMovieID) {
+        this.txfMovieID = txfMovieID;
+    }
+
+    /**
+     * @return the txfMovieTitle
+     */
+    public javax.swing.JTextField getTxfMovieTitle() {
+        return txfMovieTitle;
+    }
+
+    /**
+     * @param txfMovieTitle the txfMovieTitle to set
+     */
+    public void setTxfMovieTitle(javax.swing.JTextField txfMovieTitle) {
+        this.txfMovieTitle = txfMovieTitle;
+    }
+
+    /**
+     * @return the txfRating
+     */
+    public javax.swing.JTextField getTxfRating() {
+        return txfRating;
+    }
+
+    /**
+     * @param txfRating the txfRating to set
+     */
+    public void setTxfRating(javax.swing.JTextField txfRating) {
+        this.txfRating = txfRating;
+    }
+
+    /**
+     * @return the txfYearReleased
+     */
+    public javax.swing.JTextField getTxfYearReleased() {
+        return txfYearReleased;
+    }
+
+    /**
+     * @param txfYearReleased the txfYearReleased to set
+     */
+    public void setTxfYearReleased(javax.swing.JTextField txfYearReleased) {
+        this.txfYearReleased = txfYearReleased;
+    }
+
+    /**
      * Creates new form UpdateMovie
      */
     public UpdateMovie(java.awt.Frame parent, boolean modal) {
@@ -41,11 +146,11 @@ public class UpdateMovie extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         txfMovieTitle = new javax.swing.JTextField();
         txfYearReleased = new javax.swing.JTextField();
-        txfGenre = new javax.swing.JTextField();
         txfRating = new javax.swing.JTextField();
         txfDirector = new javax.swing.JTextField();
         btnUpdateRecord = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
+        jComboBoxGenre = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Update Movie Record");
@@ -69,6 +174,8 @@ public class UpdateMovie extends javax.swing.JDialog {
         btnUpdateRecord.setText("Update Record");
 
         btnCancel.setText("Cancel");
+
+        jComboBoxGenre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Action", "Comedy", "Drama", "Crime", "Adventure", "Animation", "Biography", "Thriller ", "Mystry", "Musical", "Documentary", "Romance ", "Fantasy" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,9 +207,9 @@ public class UpdateMovie extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txfMovieTitle)
                                     .addComponent(txfYearReleased)
-                                    .addComponent(txfGenre)
                                     .addComponent(txfRating)
-                                    .addComponent(txfDirector))))))
+                                    .addComponent(txfDirector)
+                                    .addComponent(jComboBoxGenre, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addGap(33, 33, 33))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,9 +247,9 @@ public class UpdateMovie extends javax.swing.JDialog {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txfYearReleased, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txfGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,6 +314,7 @@ public class UpdateMovie extends javax.swing.JDialog {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnRetrieveRecord;
     private javax.swing.JButton btnUpdateRecord;
+    private javax.swing.JComboBox<String> jComboBoxGenre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -217,7 +325,6 @@ public class UpdateMovie extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField txfDirector;
-    private javax.swing.JTextField txfGenre;
     private javax.swing.JTextField txfMovieID;
     private javax.swing.JTextField txfMovieTitle;
     private javax.swing.JTextField txfRating;

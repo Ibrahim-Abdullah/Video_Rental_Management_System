@@ -7,10 +7,13 @@ package videorental.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import videorental.Models.MovieCollectionModel;
+import videorental.Models.SearchMovieModel;
 import videorental.Views.AddMovie;
 import videorental.Views.DeleteMovie;
 import videorental.Views.Menu;
 import videorental.Views.MovieCollection;
+import videorental.Views.SearchMovie;
 import videorental.Views.UpdateMovie;
 
 /**
@@ -19,14 +22,15 @@ import videorental.Views.UpdateMovie;
  */
 public class MenuController implements ActionListener {
     Menu menuFrame;
-    
+    MovieCollectionModel movieCollectionModel;
     /**
      * Controller of the MenuController Class
      * Instantiate the menuFrame instance variable of the class 
      * @param menuFrame An instance of the menu JFrame.
      */
-    public MenuController(Menu menuFrame ){
+    public MenuController(Menu menuFrame, MovieCollectionModel movieCollectionModel ){
         this.menuFrame = menuFrame;
+        this.movieCollectionModel = movieCollectionModel;
     }
     
     /**
@@ -42,6 +46,8 @@ public class MenuController implements ActionListener {
         menuFrame.getjMenuItemAddMovie().addActionListener(this);
         menuFrame.getjMenuItemDeleteMovie().addActionListener(this);
         menuFrame.getjMenuItemEditMovie().addActionListener(this);
+        menuFrame.getjMenuItemViewCollection().addActionListener(this);
+        menuFrame.getjMenuItemSearchMovie().addActionListener(this);
         menuFrame.getMovieMenu().addActionListener(this);
         menuFrame.getViewMenu().addActionListener(this);
         menuFrame.getSearchMenu().addActionListener(this);
@@ -62,29 +68,37 @@ public class MenuController implements ActionListener {
             //Creat an instance of the AddMovie Controller 
             //Call the control method of the Addmovie controller
             AddMovie addMovieFrame = new AddMovie();
-            AddMovieController amc = new AddMovieController(addMovieFrame);
+            AddMovieController amc = new AddMovieController(addMovieFrame,movieCollectionModel);
             amc.controll();
             addMovieFrame.setVisible(true);
         }
         
         if(e.getSource()== menuFrame.getBtnSearchMovie()|| 
-                e.getSource()== menuFrame.getSearchMenu()){
+                e.getSource()==menuFrame.getjMenuItemSearchMovie()){
             //Create an instance of the Search form 
             //Create an instance of the SearchMovie Controller 
             //Call the controll methos of the SearchMovie Controller
             //Set the Search movie form visible
+            SearchMovie searchMovieFrame = new SearchMovie();
+            SearchMovieController smc = new SearchMovieController(searchMovieFrame);
+            smc.controll();
+            searchMovieFrame.setVisible(true);
             
             
         }
         if(e.getSource()== menuFrame.getBtnViewMovie()||
-                e.getSource()==menuFrame.getViewMenu()){
+                e.getSource()==menuFrame.getjMenuItemViewCollection()){
             //Create an instance of the View form 
             //Create an instance of the View Controller 
             //Call the controll methos of the View Controller
             //Set the Search movie form visible
             MovieCollection collectionViewFrame = new MovieCollection();
-            CoollectionViewController cvc = new CoollectionViewController(collectionViewFrame);
+            SearchMovieModel scm = SearchMovieModel.getInstance();
+            //MovieCollectionModel mcm = new MovieCollectionModel(collectionViewFrame);
+            CoollectionViewController cvc = new CoollectionViewController(collectionViewFrame,
+                    movieCollectionModel,scm);
             cvc.controll();
+            collectionViewFrame.getMovieCollectionTable().setModel(movieCollectionModel);
             collectionViewFrame.setVisible(true);
             
         }
@@ -95,16 +109,16 @@ public class MenuController implements ActionListener {
         
         if(e.getSource()== menuFrame.getjMenuItemDeleteMovie()){
             DeleteMovie deleteMovieFrame = new DeleteMovie();
-            //DeleteMovieController dmc = new DeleteMovieController(deleteMovieFrame);
-            //dmc.controll();
+            DeleteController dmc = new DeleteController(deleteMovieFrame);
+            dmc.controll();
             deleteMovieFrame.setVisible(true);
         }
         
         if(e.getSource()== menuFrame.getjMenuItemEditMovie()){
             
             UpdateMovie updateMovieFrame = new UpdateMovie(menuFrame, true);
-            //UpdateMovieController umc = new UpdateMovieController(updateMovieFrame);
-            //umc.controll();
+            UpdateController umc = new UpdateController(updateMovieFrame);
+            umc.controll();
             updateMovieFrame.setVisible(true);
         }
         

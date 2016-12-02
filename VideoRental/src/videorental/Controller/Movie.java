@@ -27,6 +27,15 @@ public class Movie {
         this.director = movieDirector;
     }
 
+    public Movie() {
+        this.ID = 0;
+        this.title = null;
+        this.yearReleased = 0;
+        this.genre = null;
+        this.rating = 0.0;
+        this.director = null;
+    }
+
     /**
      * @return the ID
      */
