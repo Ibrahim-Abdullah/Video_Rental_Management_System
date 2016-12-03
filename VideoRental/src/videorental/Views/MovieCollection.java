@@ -52,6 +52,7 @@ public class MovieCollection extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        btnExport = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuMovie = new javax.swing.JMenu();
         jMenuItemAddMovie = new javax.swing.JMenuItem();
@@ -81,9 +82,11 @@ public class MovieCollection extends javax.swing.JFrame {
 
         btnDeleteMovie.setText("Delete Movie ");
 
-        btnCancel.setText("Cancel");
+        btnCancel.setText("Close");
 
         jLabel1.setText("MOVIES IN COLLECTION ");
+
+        btnExport.setText("Export to File");
 
         jMenuMovie.setMnemonic('M');
         jMenuMovie.setText("Movie");
@@ -141,7 +144,7 @@ public class MovieCollection extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(188, 188, 188)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 227, Short.MAX_VALUE))
+                        .addGap(0, 380, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1)))
@@ -150,11 +153,12 @@ public class MovieCollection extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUpdateMovie, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAddMovie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteMovie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnUpdateMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDeleteMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
@@ -164,21 +168,22 @@ public class MovieCollection extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnAddMovie)
-                        .addGap(35, 35, 35)
+                        .addGap(18, 18, 18)
                         .addComponent(btnUpdateMovie)
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addComponent(btnDeleteMovie)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnCancel)
-                        .addContainerGap())))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExport)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41))
         );
 
         pack();
@@ -228,6 +233,7 @@ public class MovieCollection extends javax.swing.JFrame {
     private javax.swing.JButton btnAddMovie;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnDeleteMovie;
+    private javax.swing.JButton btnExport;
     private javax.swing.JButton btnUpdateMovie;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;

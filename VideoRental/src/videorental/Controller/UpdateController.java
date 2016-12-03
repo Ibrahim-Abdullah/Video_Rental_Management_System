@@ -103,6 +103,20 @@ public class UpdateController implements ActionListener{
          }
      }
     
+    public void setIndex(int movieID){
+             ArrayList<Movie> movieList = movieCollectionModel.getMovieList();
+             
+             //int m = -1;
+             //Movie movie = null;
+             for(int i = 0; i < movieList.size(); i++){
+                 if(movieList.get(i).getID()==movieID){
+                     index = i;
+                     //movie = movieList.get(i);
+                     break;
+                 }
+             }
+    }
+    
     private void resetUpdateField(){
                  updateMovieFrame.getTxfMovieTitle().setText("");
                  updateMovieFrame.getTxfYearReleased().setText("");

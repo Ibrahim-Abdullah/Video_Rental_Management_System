@@ -12,7 +12,9 @@ import videorental.Views.MovieCollection;
 
 /**
  * This the main class that provide serve as an entry point into 
- * the MovieCollection application.
+ * the MovieCollection application. It makes the menu visible for the user 
+ * to start navigating the application.
+ * 
  * @author Ibrahim-Abdullah
  */
 public class VideoRental {

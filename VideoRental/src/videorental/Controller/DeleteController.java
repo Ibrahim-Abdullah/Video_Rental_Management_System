@@ -14,7 +14,21 @@ import videorental.Views.DeleteMovie;
 import videorental.Views.MovieCollection;
 
 /**
- *
+ * This class controls actions performed on the Delete Movie  Frame.
+ * It add Action listeners to all the the form element on the Delete Movie  Frame.
+ * It also triggers actions to be performed when performs any action on the JFrame or form. 
+ * Its implement the ActionListener interface and has as instance variables instances of
+ * DeleteMovie JFrame and the MovieCollectionModel.
+ * 
+ * Imported Packages include the following;
+ *import java.awt.event.ActionEvent;
+ *import java.awt.event.ActionListener;
+ *import javax.swing.JOptionPane;
+ *import videorental.Models.MovieCollectionModel;
+ *import videorental.Models.SearchMovieModel;
+ *import videorental.Views.DeleteMovie;
+ *import videorental.Views.MovieCollection;
+ * 
  * @author Ibrahim-Abdullah
  */
 public class DeleteController implements ActionListener{
@@ -22,26 +36,34 @@ public class DeleteController implements ActionListener{
     MovieCollectionModel mcm;
     
     
+    /**
+     * Constructor of the DeleteController Class.
+     * @param deleteMovieFrame An instance of Delete Movie JFrame
+     */
     public DeleteController(DeleteMovie deleteMovieFrame){
         this.deleteMovieFrame = deleteMovieFrame;
         this.mcm = MovieCollectionModel.getInstance();
     }
-    
+    /**
+     * Add action Listeners to all the buttons on the Delete Movie Frame.
+     */
     public void controll(){
         deleteMovieFrame.getBtnCancel().addActionListener(this);
         deleteMovieFrame.getBtnDelete().addActionListener(this);
     }
  
     /**
-     * Perform an action based on an action performed by the user.
-     * When AddMovie is clicked, 
-     * all form input are collected for database insertion.
-     * When Cancel is clicked,the form visible is set to false.
-     * 
-     * @param e An action event
+     * Listens to actions performed on the Delete Movie  frame.
+     * Depending on the action performed on the frame, a particular section 
+     * of the program runs.
+     * If the user click on the Delete Movie button,A movie is deleted upon confirmation form the user.
+     * When the user clicks on Cancel, the movie Collection Frame is hid and the Menu Frame 
+     * is displayed.
+     * @param actionEvent An instance of ActionEvent Class that listens to actions performed 
+     * on the JFrame.
      */
-    public void actionPerformed (ActionEvent e){
-        if(e.getSource()== deleteMovieFrame.getBtnDelete()){
+    public void actionPerformed (ActionEvent actionEvent){
+        if(actionEvent.getSource()== deleteMovieFrame.getBtnDelete()){
             int movieID = Integer.parseInt(deleteMovieFrame.getTxfMovieID().getText());
             try{
                 boolean success = mcm.deleteRecord(movieID);
@@ -61,7 +83,7 @@ public class DeleteController implements ActionListener{
             //Otherwise, ignore deletion
             //Give feedback to user 
          }
-         if(e.getSource()== deleteMovieFrame.getBtnCancel()){
+         if(actionEvent.getSource()== deleteMovieFrame.getBtnCancel()){
             deleteMovieFrame.setVisible(false);
              mcm = MovieCollectionModel.getInstance();
              MovieCollection mc = new MovieCollection();
@@ -76,14 +98,14 @@ public class DeleteController implements ActionListener{
     
     
     /**
-     * @return the deleteMovieFrame
+     * @return the deleteMovieFrame An instance of the Delete Movie Frame.
      */
     public DeleteMovie getDeleteMovieFrame() {
         return deleteMovieFrame;
     }
 
     /**
-     * @param deleteMovieFrame the deleteMovieFrame to set
+     * @param deleteMovieFrame An instance of the Delete Movie frame to set.
      */
     public void setDeleteMovieFrame(DeleteMovie deleteMovieFrame) {
         this.deleteMovieFrame = deleteMovieFrame;

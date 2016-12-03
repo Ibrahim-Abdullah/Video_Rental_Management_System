@@ -16,17 +16,33 @@ import videorental.Views.MovieCollection;
 import videorental.Views.SearchMovie;
 import videorental.Views.UpdateMovie;
 
-/**
- *
+ /**
+ * This class controls actions performed on the Menu Frame.
+ * It add Action listeners to all the the form element on the Menu Frame.
+ * It also triggers actions to be performed when performs any action on the JFrame or form. 
+ * Its implement the ActionListener interface and has as instance variables instances of the
+ * MenuFrame and MovieCollectionModel
+ * Imported Packages include the following;
+ *import java.awt.event.ActionEvent;
+ *import java.awt.event.ActionListener;
+ *import videorental.Models.MovieCollectionModel;
+ *import videorental.Models.SearchMovieModel;
+ *import videorental.Views.AddMovie;
+ *import videorental.Views.DeleteMovie;
+ *import videorental.Views.Menu;
+ *import videorental.Views.MovieCollection;
+ *import videorental.Views.SearchMovie;
+ *import videorental.Views.UpdateMovie;
  * @author Ibrahim-Abdullah
  */
 public class MenuController implements ActionListener {
     Menu menuFrame;
     MovieCollectionModel movieCollectionModel;
+    
     /**
      * Controller of the MenuController Class
-     * Instantiate the menuFrame instance variable of the class 
      * @param menuFrame An instance of the menu JFrame.
+     * @param movieCollectionModel An instance of the MovieCollectionModel class
      */
     public MenuController(Menu menuFrame, MovieCollectionModel movieCollectionModel ){
         this.menuFrame = menuFrame;
@@ -34,8 +50,7 @@ public class MenuController implements ActionListener {
     }
     
     /**
-     * Add Action listeners to all the form items on the 
-     * menuFrame form. 
+     * Add Action listeners to all the form items on the  menuFrame form. 
      */
     public void control(){
         
