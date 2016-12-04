@@ -7,7 +7,11 @@ package videorental.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
 import videorental.Models.MovieCollectionModel;
 import videorental.Models.SearchMovieModel;
 import videorental.Views.AddMovie;
@@ -71,6 +75,7 @@ public class CoollectionViewController implements ActionListener{
         movieCollection.getjMenuItemSearchMovie().addActionListener(this);
         movieCollection.getjMenuSearch().addActionListener(this);
         movieCollection.getjMenuView().addActionListener(this);
+        movieCollection.getBtnExport().addActionListener(this);
         //movieCollection.getMovieCollectionTable().addActionListener(this);
     }
     /**
@@ -179,5 +184,31 @@ public class CoollectionViewController implements ActionListener{
             searchMovieFrame.setVisible(true);
             
         }
+        if(actionEvent.getSource()== movieCollection.getBtnExport()){
+            exportToExcel(movieCollection.getMovieCollectionTable(),"Movies.xls");
+            JOptionPane.showMessageDialog(null,"Movies has been exported to Excel File");
+            
+        }
     }
+    
+private void exportToExcel(JTable table, String file){
+    try{
+        TableModel model = table.getModel();
+        try (FileWriter excel = new FileWriter(file,false)) {
+            for(int i = 0; i < model.getColumnCount(); i++){
+                excel.write(model.getColumnName(i) + "\t");
+            }
+            
+            excel.write("\n");
+            
+            for(int i=0; i< model.getRowCount(); i++) {
+                for(int j=0; j < model.getColumnCount(); j++) {
+                    excel.write(model.getValueAt(i,j).toString()+"\t");
+                }
+                excel.write("\n");
+            }
+        }
+
+    }catch(IOException e){ System.out.println(e); }
+}
 }

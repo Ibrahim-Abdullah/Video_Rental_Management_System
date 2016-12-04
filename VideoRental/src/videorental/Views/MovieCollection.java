@@ -339,4 +339,11 @@ public class MovieCollection extends javax.swing.JFrame {
     public javax.swing.JMenuItem getjMenuItemViewCollection() {
         return jMenuItemViewCollection;
     }
+
+    /**
+     * @return the btnExport
+     */
+    public javax.swing.JButton getBtnExport() {
+        return btnExport;
+    }
 }
