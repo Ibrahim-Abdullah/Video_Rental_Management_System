@@ -207,10 +207,10 @@ public void updateMovie(Movie movie, int index) {
             ps.execute();
             movieList.set(index, movie);
             
-            if(ps!=null){
-                ps.close();
-            }
-            conn.close();
+//            if(ps!=null){
+//                ps.close();
+//            }
+//            conn.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error" + e.toString());
             //return false;
@@ -232,10 +232,11 @@ public void updateMovie(Movie movie, int index) {
                 movieList = new ArrayList<Movie>();
                 fetchTableData();
                 
-                if(ps!=null){
-                    ps.close();
-                }
-                con.close();
+//                if(ps!=null){
+//                    ps.close();
+//                }
+//                con.close();
+                System.out.println(success);
                 return success;
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null,"Error" + e.toString());

@@ -69,13 +69,13 @@ public class DeleteController implements ActionListener{
             try{
                 boolean success = mcm.deleteRecord(movieID);
                 if(success){
-                    JOptionPane.showMessageDialog(null,"Book has been deleted");
+                    JOptionPane.showMessageDialog(null,"Movie Record has been deleted");
                     deleteMovieFrame.setVisible(false);
                 }
                 else
-                    JOptionPane.showMessageDialog(null,"Book ID does not exist");
+                    JOptionPane.showMessageDialog(null,"Movie ID does not exist");
             }catch(Exception ea){
-                JOptionPane.showMessageDialog(null,"Incorrect Movie ID");
+                JOptionPane.showMessageDialog(null,"Movie ID does not exist");
             }
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null,"Incorrect Movie ID");
