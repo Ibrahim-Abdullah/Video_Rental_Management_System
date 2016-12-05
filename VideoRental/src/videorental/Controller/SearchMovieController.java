@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,20 +14,36 @@ import videorental.Views.MovieCollection;
 import videorental.Views.SearchMovie;
 
 /**
- *
+ *This class controls the activities of a user search for a movies.
+ * Its has as instance variables a SearchMovieFrame, which is an instance of the
+ * Search movie form and searchMovieModel which is an instance of the Search Movie 
+ * Table model.
+ * Both instance variables are instantiated by passing the instance of the class 
+ * they belong to as parameter to the constructor.
+ * 
  * @author Ibrahim-Abdullah
  */
 public class SearchMovieController implements ActionListener{
     SearchMovie searchMovieFrame;
     SearchMovieModel searchMovieModel;
     
+    
+    /**
+     * Constructor of the class. 
+     * It instantiate the searchMovieFrame instance variable with the parameter.
+     * It also instantiate the searchMovieModel by using the class name to get
+     * an instance of the class.
+     * 
+     * @param searchMovieFrame An instance of the Search Movie Frame class.
+     * 
+     */
     public SearchMovieController(SearchMovie searchMovieFrame){
         this.searchMovieFrame = searchMovieFrame;
         this.searchMovieModel = SearchMovieModel.getInstance();
         
     }
     /**
-     * Add ActionLiesteners to all the form element the addMovieFrame
+     * Add ActionLiesteners to all the form element on the Search Movie Frame.
      */
     public void controll(){
         searchMovieFrame.getBtnSearch().addActionListener(this);

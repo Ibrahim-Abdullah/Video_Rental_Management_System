@@ -64,18 +64,21 @@ public class DeleteController implements ActionListener{
      */
     public void actionPerformed (ActionEvent actionEvent){
         if(actionEvent.getSource()== deleteMovieFrame.getBtnDelete()){
-            int movieID = Integer.parseInt(deleteMovieFrame.getTxfMovieID().getText());
+            try{
+                int movieID = Integer.parseInt(deleteMovieFrame.getTxfMovieID().getText());
             try{
                 boolean success = mcm.deleteRecord(movieID);
-                if(!success){
+                if(success){
                     JOptionPane.showMessageDialog(null,"Book has been deleted");
                     deleteMovieFrame.setVisible(false);
-                    
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Book ID does not exist");
             }catch(Exception ea){
-                JOptionPane.showMessageDialog(null,"Incorrect Book ID");
+                JOptionPane.showMessageDialog(null,"Incorrect Movie ID");
+            }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"Incorrect Movie ID");
             }
             //Check if there is a movie with the specified ID.
             //If movie exist, prompt user to confirm deletion

@@ -123,6 +123,7 @@ public class Movie {
     }
 
     /**
+     * 
      * @return Get the director of the movie
      */
     public String getDirector() {
@@ -130,6 +131,7 @@ public class Movie {
     }
 
     /**
+     * Set the director of a movie
      * @param director The director of the movie to be set
      */
     public void setDirector(String director) {

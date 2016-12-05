@@ -7,6 +7,7 @@ package videorental.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import videorental.Models.SearchMovieModel;
 import videorental.Models.MovieCollectionModel;
 import videorental.Views.AddMovie;
@@ -68,6 +69,8 @@ public class AddMovieController implements ActionListener{
          if(actionEvent.getSource()== addMovieFrame.getBtnAddMovie() ){
              
              //Get form input for processing
+            boolean success = fieldValidation();
+            if(success){
              int movieID = Integer.parseInt(addMovieFrame.getTxfMovieId().getText());
              String movieTitle = addMovieFrame.getTxfMovieTitle().getText();
              int  yearReleased = Integer.parseInt(addMovieFrame.getTxfYearReleased().getText());
@@ -109,6 +112,10 @@ public class AddMovieController implements ActionListener{
             //Display the movieCollection form
             mc.setVisible(true);
              //Give feedback to user 
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Movie Record Could not Inserted into Database");
+                }
          }
          
          //Its is executed when the user clicks on the cancel button.
@@ -119,4 +126,66 @@ public class AddMovieController implements ActionListener{
              
          }
      }
+    
+public Boolean fieldValidation(){
+        boolean success = false;
+        try{
+            //long id = new Long(studentId).longValue();
+            long id = Long.parseLong(addMovieFrame.getTxfMovieId().getText());
+            if(id <= 0){
+                    JOptionPane.showMessageDialog(null,"Incorrect Incorrect MovieID");
+                }
+            //Check if Year of Admission is of the format
+            try{
+                int yearReleased = Integer.parseInt(addMovieFrame.getTxfYearReleased().getText());
+                if(yearReleased <= 1900 || yearReleased >= 2016){
+                    JOptionPane.showMessageDialog(null,"Incorrect Year Format");
+                }
+                
+                try{
+                    double movieRating  = Double.parseDouble(addMovieFrame.getRating().getText());
+                    if(movieRating< 0.0 || movieRating > 10.0){
+                        success =false;
+                        JOptionPane.showMessageDialog(null,"Incorrect Rating.Range is between [0.0 - 10.0]");
+                    }
+                    else{
+                    success = true;
+                    }
+                    
+                }
+                catch(NumberFormatException e){
+                    success = false;
+                    if(addMovieFrame.getRating().getText().equals("")){
+                        JOptionPane.showMessageDialog(null,"Enter Movie Rating");
+                    }
+                    else{
+                    JOptionPane.showMessageDialog(null,"Incorrect Rating: Range[0.0 - 10.0]");
+                    }
+                }
+            }
+            catch(NumberFormatException e){
+                success = false;
+            if(addMovieFrame.getTxfYearReleased().getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Enter Year Movie was Released");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Incorrect Year [eg. 2014]");
+            }
+            }
+            if(addMovieFrame.getGenreComboBox().getSelectedItem().toString().equalsIgnoreCase("Select Program of Study")){
+                success = false;
+                JOptionPane.showMessageDialog(null,"Select Movie Genre");
+            }
+        }
+        catch(NumberFormatException e){
+            success = false;
+            if(addMovieFrame.getTxfMovieId().getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Enter MovieID");
+            }
+            else{
+            JOptionPane.showMessageDialog(null,"Incorrect Movie ID:Should be a number"); 
+            }
+        }
+        return success;
+    }
 }

@@ -9,13 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import java.sql.Statement;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
-import net.proteanit.sql.DbUtils;
 import videorental.Controller.Movie;
-import videorental.Views.MovieCollection;
 
 /**
  *
@@ -113,8 +109,12 @@ public class SearchMovieModel extends AbstractTableModel {
         }
         return 0;
     }
-
-public void searchByTitle(String title) {
+    
+    /**
+     * Search for movies according to the title of the movie
+     * @param title The title of the movie
+     */
+    public void searchByTitle(String title) {
         movieList = new ArrayList<Movie>();
         try {
             Connection con = null;
@@ -142,12 +142,20 @@ public void searchByTitle(String title) {
                  
                 getMovieList().add(mov);
             }
+            rs.close();
+            ps.close();
+            con.close();
                     System.out.println("Success: " + ps.execute("select * from Books where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
     }
-public void searchByYearReleased(int yearReleased) {
+
+    /**
+     * Search for movies from the database according the year movies were released.
+     * @param yearReleased  The specified year of the movie to be searched for.
+     */
+    public void searchByYearReleased(int yearReleased) {
         movieList = new ArrayList<Movie>();
         try {
             Connection con = null;
@@ -175,12 +183,20 @@ public void searchByYearReleased(int yearReleased) {
                  
                 getMovieList().add(mov);
             }
-                    System.out.println("Success: " + ps.execute("select * from Books where Title=title"));
+            rs.close();
+            ps.close();
+            con.close();
+                    //System.out.println("Success: " + ps.execute("select * from Books where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
     }
-public void searchByGenre(String genre) {
+
+    /**
+     * Search for movie according to Genre.
+     * @param genre The specified genre of the Movie to be searched for.
+     */
+    public void searchByGenre(String genre) {
         movieList = new ArrayList<Movie>();
         try {
             Connection con = null;
@@ -207,13 +223,21 @@ public void searchByGenre(String genre) {
                 mov.setDirector(rs.getString(6));
                  
                 getMovieList().add(mov);
+                rs.close();
+                ps.close();
+                con.close();
             }
                     System.out.println("Success: " + ps.execute("select * from Books where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
     }
-public void searchByRating(double rating) {
+
+    /**
+     * Search movie record according to Ratings 
+     * @param rating The specified rating for the search
+     */
+    public void searchByRating(double rating) {
         movieList = new ArrayList<Movie>();
         try {
             Connection con = null;
@@ -240,13 +264,21 @@ public void searchByRating(double rating) {
                 mov.setDirector(rs.getString(6));
                  
                 getMovieList().add(mov);
+                rs.close();
+                ps.close();
+                con.close();
             }
                     System.out.println("Success: " + ps.execute("select * from Movies where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
     }
-public void searchByDirector(String director) {
+
+    /**
+     * Search for movie records according to director name 
+     * @param director The name of the director
+     */
+    public void searchByDirector(String director) {
         movieList = new ArrayList<Movie>();
         try {
             Connection con = null;
@@ -274,28 +306,31 @@ public void searchByDirector(String director) {
                  
                 getMovieList().add(mov);
             }
-                    System.out.println("Success: " + ps.execute("select * from Movies where Title=title"));
+                rs.close();
+                ps.close();
+                con.close();
+                    //System.out.println("Success: " + ps.execute("select * from Movies where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
     }
 
     /**
-     * @return the colHeader
+     * @return The column headers for the table 
      */
     public String[] getColHeader() {
         return colHeader;
     }
 
     /**
-     * @return the movieList
+     * @return A reference to the movie ArrayList in the model
      */
     public ArrayList<Movie> getMovieList() {
         return movieList;
     }
 
     /**
-     * @return the movieCollectionModel
+     * @return An instance of movieCollectionModel in the this class
      */
     public static SearchMovieModel getSearchMovieModel() {
         return searchMovieModel;

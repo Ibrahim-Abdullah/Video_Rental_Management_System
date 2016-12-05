@@ -37,7 +37,7 @@ public class MovieCollectionModel extends AbstractTableModel {
     
     public MovieCollectionModel() {
         super();
-        movieList = new ArrayList<Movie>();
+        movieList = new ArrayList<>();
         fetchTableData();
 
     }
@@ -115,7 +115,10 @@ public class MovieCollectionModel extends AbstractTableModel {
         return 0;
     }
 
-    public void fetchTableData() {
+    /**
+     * Fetch data in the database and populate the tables in the View Collection
+     */
+    private void fetchTableData() {
         try {
             Connection conn = null;
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -143,6 +146,8 @@ public class MovieCollectionModel extends AbstractTableModel {
                  
                 getMovieList().add(mov);
             }
+            rs.close();
+            conn.close();
         } catch (Exception e) {
             System.out.println("Error");
             e.printStackTrace();
@@ -153,8 +158,9 @@ public class MovieCollectionModel extends AbstractTableModel {
 
     public boolean addMovie(Movie movie) {
         boolean success;
+        Connection conn = null;
         try {
-            Connection conn = null;
+            //Connection conn = null;
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             conn = java.sql.DriverManager.getConnection(
                     "jdbc:mysql://localhost/videorental?user=root&password=0030104018profib");
@@ -169,13 +175,15 @@ public class MovieCollectionModel extends AbstractTableModel {
             ps.setString(6, movie.getDirector());
             success = ps.execute();
             getMovieList().add(movie);
+            ps.close();
+            conn.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error" + e.toString());
             return false;
         }
 
         //check this for problems
-        getMovieCollectionModel().fireTableDataChanged();
+        //getMovieCollectionModel().fireTableDataChanged();
         return success;
     }
     
@@ -198,6 +206,10 @@ public void updateMovie(Movie movie, int index) {
             ps.execute();
             movieList.set(index, movie);
             
+            if(ps!=null){
+                ps.close();
+            }
+            conn.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error" + e.toString());
             //return false;
@@ -218,6 +230,11 @@ public void updateMovie(Movie movie, int index) {
                 success = ps.execute();
                 movieList = new ArrayList<Movie>();
                 fetchTableData();
+                
+                if(ps!=null){
+                    ps.close();
+                }
+                con.close();
                 return success;
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null,"Error" + e.toString());

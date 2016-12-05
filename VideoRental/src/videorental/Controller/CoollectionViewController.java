@@ -138,11 +138,6 @@ public class CoollectionViewController implements ActionListener{
             movieCollection.setVisible(false);
             uc.controll();
             updateMovieFrame.setVisible(true);
-
-            
-            
-            
-            
         }
         if(actionEvent.getSource()== movieCollection.getjMenuItemDeleteMovie()){
             DeleteMovie deleteMovieFrame = new DeleteMovie();
@@ -190,7 +185,12 @@ public class CoollectionViewController implements ActionListener{
             
         }
     }
-    
+
+    /**
+     * This method export the movie record in the table to an excel file.
+     * @param table The table on the Movie Collection form.
+     * @param file The name of the file to export the data into.
+     */
 private void exportToExcel(JTable table, String file){
     try{
         TableModel model = table.getModel();

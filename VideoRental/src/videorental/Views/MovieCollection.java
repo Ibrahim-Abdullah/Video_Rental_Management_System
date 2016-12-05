@@ -66,6 +66,7 @@ public class MovieCollection extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ALL MOVIES IN COLLECTION");
 
+        MovieCollectionTable.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
         MovieCollectionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -76,20 +77,27 @@ public class MovieCollection extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(MovieCollectionTable);
 
+        btnAddMovie.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         btnAddMovie.setText("Add Movie");
 
+        btnUpdateMovie.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         btnUpdateMovie.setText("Update Movie ");
 
+        btnDeleteMovie.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         btnDeleteMovie.setText("Delete Movie ");
 
+        btnCancel.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         btnCancel.setText("Close");
 
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("MOVIES IN COLLECTION ");
 
+        btnExport.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
         btnExport.setText("Export to File");
 
         jMenuMovie.setMnemonic('M');
         jMenuMovie.setText("Movie");
+        jMenuMovie.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
 
         jMenuItemAddMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemAddMovie.setMnemonic('A');
@@ -110,6 +118,7 @@ public class MovieCollection extends javax.swing.JFrame {
 
         jMenuSearch.setMnemonic('S');
         jMenuSearch.setText("Search");
+        jMenuSearch.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
 
         jMenuItemSearchMovie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemSearchMovie.setMnemonic('c');
@@ -125,6 +134,7 @@ public class MovieCollection extends javax.swing.JFrame {
 
         jMenuView.setMnemonic('V');
         jMenuView.setText("View");
+        jMenuView.setFont(new java.awt.Font("Cambria", 1, 16)); // NOI18N
 
         jMenuItemViewCollection.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemViewCollection.setMnemonic('w');
@@ -140,18 +150,12 @@ public class MovieCollection extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 380, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator1)))
+                .addContainerGap()
+                .addComponent(jSeparator1)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnUpdateMovie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -160,17 +164,22 @@ public class MovieCollection extends javax.swing.JFrame {
                     .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(245, 245, 245)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(1, 1, 1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnAddMovie)
                         .addGap(18, 18, 18)
                         .addComponent(btnUpdateMovie)
@@ -180,10 +189,8 @@ public class MovieCollection extends javax.swing.JFrame {
                         .addComponent(btnExport)
                         .addGap(18, 18, 18)
                         .addComponent(btnCancel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         pack();
