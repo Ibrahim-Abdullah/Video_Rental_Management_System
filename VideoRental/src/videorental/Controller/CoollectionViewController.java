@@ -93,7 +93,7 @@ public class CoollectionViewController implements ActionListener{
         if(actionEvent.getSource()== movieCollection.getBtnAddMovie()){
             AddMovie addMovieFrame  = new AddMovie();
             AddMovieController amc = new AddMovieController(addMovieFrame,mcm);
-            //movieCollection.setVisible(false);
+            movieCollection.setVisible(false);
             addMovieFrame.setVisible(true);
             amc.controll();
            

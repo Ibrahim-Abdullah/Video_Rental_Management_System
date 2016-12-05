@@ -75,6 +75,13 @@ public class SearchMovieModel extends AbstractTableModel {
         return getColHeader()[col];
     }
 
+    
+    /**
+     * 
+     * @param value The Object to be inserted into the table
+     * @param row The table row
+     * @param col The table column 
+     */
     public void setValueAt(Object value, int row, int col) {
         Movie movie;
         movie = getMovieList().get(row);

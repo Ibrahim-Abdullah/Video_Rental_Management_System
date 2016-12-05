@@ -126,32 +126,38 @@ public class AddMovieController implements ActionListener{
              
          }
      }
-    
-public Boolean fieldValidation(){
-        boolean success = false;
+/**
+ * Validate the addMovie form input before insertion into database.
+ * 
+ * @return Boolean indicating is validation was successful or not
+ */
+public  Boolean fieldValidation(){
+        boolean success = true;
         try{
             //long id = new Long(studentId).longValue();
             long id = Long.parseLong(addMovieFrame.getTxfMovieId().getText());
             if(id <= 0){
+                    success =false;
                     JOptionPane.showMessageDialog(null,"Incorrect Incorrect MovieID");
                 }
             //Check if Year of Admission is of the format
             try{
                 int yearReleased = Integer.parseInt(addMovieFrame.getTxfYearReleased().getText());
-                if(yearReleased <= 1900 || yearReleased >= 2016){
+                if(yearReleased <= 1900 || yearReleased > 2016){
+                    success =false;
+                    if(yearReleased > 2016)
+                        JOptionPane.showMessageDialog(null,yearReleased +"Has not come yet");
+                    else{
                     JOptionPane.showMessageDialog(null,"Incorrect Year Format");
+                    }
                 }
                 
                 try{
                     double movieRating  = Double.parseDouble(addMovieFrame.getRating().getText());
                     if(movieRating< 0.0 || movieRating > 10.0){
                         success =false;
-                        JOptionPane.showMessageDialog(null,"Incorrect Rating.Range is between [0.0 - 10.0]");
+                        JOptionPane.showMessageDialog(null,"Incorrect Rating.Range is [0.0 - 10.0]");
                     }
-                    else{
-                    success = true;
-                    }
-                    
                 }
                 catch(NumberFormatException e){
                     success = false;
@@ -159,7 +165,7 @@ public Boolean fieldValidation(){
                         JOptionPane.showMessageDialog(null,"Enter Movie Rating");
                     }
                     else{
-                    JOptionPane.showMessageDialog(null,"Incorrect Rating: Range[0.0 - 10.0]");
+                    JOptionPane.showMessageDialog(null,"Incorrect Rating: Range is [0.0 - 10.0]");
                     }
                 }
             }

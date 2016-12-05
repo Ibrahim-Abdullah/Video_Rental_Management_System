@@ -174,6 +174,7 @@ public class MovieCollectionModel extends AbstractTableModel {
             ps.setDouble(5, movie.getRating());
             ps.setString(6, movie.getDirector());
             success = ps.execute();
+            System.out.print(success);
             getMovieList().add(movie);
             ps.close();
             conn.close();

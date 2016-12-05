@@ -49,7 +49,8 @@ public class UpdateController implements ActionListener{
         
         //Update Movie Details
          if(e.getSource()== updateMovieFrame.getBtnUpdateRecord() ){
-             
+             boolean success = fieldValidation();
+             if(success){
              int movieID = Integer.parseInt(updateMovieFrame.getTxfMovieID().getText());
              String movieTitle = updateMovieFrame.getTxfMovieTitle().getText();
              int  yearReleased = Integer.parseInt(updateMovieFrame.getTxfYearReleased().getText());
@@ -63,7 +64,12 @@ public class UpdateController implements ActionListener{
              //Update the record of the movie with the new data
              //Give feedback to user 
              movieCollectionModel.updateMovie(movie,index);
+             JOptionPane.showMessageDialog(null,"Movie record has been updated Unsuccesful");
              resetUpdateField();
+             }
+             else{
+                 JOptionPane.showMessageDialog(null,"Update was Unsuccesful");
+             }
          }
          if(e.getSource()== updateMovieFrame.getBtnCancel()){
              updateMovieFrame.setVisible(false);
@@ -99,6 +105,7 @@ public class UpdateController implements ActionListener{
                  updateMovieFrame.getTxfRating().setText(Double.toString(movie.getRating()));
                  updateMovieFrame.getTxfDirector().setText(movie.getDirector());
                  updateMovieFrame.getjComboBoxGenre().setSelectedItem(movie.getGenre());
+                 updateMovieFrame.getTxfMovieID().enableInputMethods(false);
              }
          }
      }
@@ -138,31 +145,33 @@ public class UpdateController implements ActionListener{
      * Validate the content of updates before record in the database is also updated.
      * @return Whether the validation was successful or not.
      */
-    public Boolean fieldValidation(){
-        boolean success = false;
+    public  Boolean fieldValidation(){
+        boolean success = true;
         try{
             //long id = new Long(studentId).longValue();
             long id = Long.parseLong(updateMovieFrame.getTxfMovieID().getText());
             if(id <= 0){
+                    success =false;
                     JOptionPane.showMessageDialog(null,"Incorrect Incorrect MovieID");
                 }
             //Check if Year of Admission is of the format
             try{
                 int yearReleased = Integer.parseInt(updateMovieFrame.getTxfYearReleased().getText());
-                if(yearReleased <= 1900 || yearReleased >= 2016){
+                if(yearReleased <= 1900 || yearReleased > 2016){
+                    success =false;
+                    if(yearReleased > 2016)
+                        JOptionPane.showMessageDialog(null,yearReleased +"Has not come yet");
+                    else{
                     JOptionPane.showMessageDialog(null,"Incorrect Year Format");
+                    }
                 }
                 
                 try{
                     double movieRating  = Double.parseDouble(updateMovieFrame.getTxfRating().getText());
                     if(movieRating< 0.0 || movieRating > 10.0){
                         success =false;
-                        JOptionPane.showMessageDialog(null,"Incorrect Rating.Range is between [0.0 - 10.0]");
+                        JOptionPane.showMessageDialog(null,"Incorrect Rating.Range is [0.0 - 10.0]");
                     }
-                    else{
-                    success = true;
-                    }
-                    
                 }
                 catch(NumberFormatException e){
                     success = false;
@@ -170,7 +179,7 @@ public class UpdateController implements ActionListener{
                         JOptionPane.showMessageDialog(null,"Enter Movie Rating");
                     }
                     else{
-                    JOptionPane.showMessageDialog(null,"Incorrect Rating: Range[0.0 - 10.0]");
+                    JOptionPane.showMessageDialog(null,"Incorrect Rating: Range is [0.0 - 10.0]");
                     }
                 }
             }
