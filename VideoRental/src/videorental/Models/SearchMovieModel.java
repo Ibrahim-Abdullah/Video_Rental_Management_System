@@ -152,7 +152,6 @@ public class SearchMovieModel extends AbstractTableModel {
             rs.close();
             ps.close();
             con.close();
-                    System.out.println("Success: " + ps.execute("select * from Books where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
@@ -230,11 +229,13 @@ public class SearchMovieModel extends AbstractTableModel {
                 mov.setDirector(rs.getString(6));
                  
                 getMovieList().add(mov);
+//                rs.close();
+//                ps.close();
+//                con.close();
+            }
                 rs.close();
                 ps.close();
                 con.close();
-            }
-                    System.out.println("Success: " + ps.execute("select * from Books where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
@@ -271,11 +272,13 @@ public class SearchMovieModel extends AbstractTableModel {
                 mov.setDirector(rs.getString(6));
                  
                 getMovieList().add(mov);
+//                rs.close();
+//                ps.close();
+//                con.close();
+            }
                 rs.close();
                 ps.close();
                 con.close();
-            }
-                    System.out.println("Success: " + ps.execute("select * from Movies where Title=title"));
                 } catch (Exception e) {
                     System.out.println("Error " + e.toString());
         }
