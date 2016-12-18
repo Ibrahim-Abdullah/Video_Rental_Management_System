@@ -1,6 +1,6 @@
 
-#Create database MovieCollection;
-/*Use VideoRental;
+Create database MovieCollection;
+/Use VideoRental;
 
 Create table Movies(
 	MovieID int(10) not null,
@@ -9,7 +9,7 @@ Create table Movies(
 	Genre varchar(50),
 	Rating Decimal(4,2),
 	Director varchar(255)
-);*/
+);
 
 Insert into Movies values(1,'Tom and Jerry',2014,'Animation',9.4,'Ibrahim Abdullah');
 Insert into Movies values(2,'The Social Network',2015,'Thriller',9.4,'John Doe');
